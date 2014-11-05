@@ -1,6 +1,6 @@
-{ul, li} = require 'reactionary-atom-fork'
+{ul, li} = require 'reactionary'
 TodoStore = require '../stores/todo'
-TodoItem = require './todo-item'
+TodoItem = React.createFactory(require('./todo-item'))
 require './todo.less'
 
 

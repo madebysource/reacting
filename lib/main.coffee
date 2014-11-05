@@ -1,4 +1,4 @@
-window.React = require 'react-atom-fork'
+window.React = require 'react'
 App = require './components/app'
 
-React.renderComponent(App(null), document.getElementById('app'))
+React.render(React.createElement(App), document.getElementById('app'))

@@ -1,5 +1,5 @@
-{li} = require 'reactionary-atom-fork'
-{addons} = require 'react-atom-fork/addons'
+{li} = require 'reactionary'
+{addons} = require 'react/addons'
 TodoActions = require '../actions/todo'
 
 
