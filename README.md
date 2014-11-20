@@ -5,5 +5,5 @@ Example [React](http://facebook.github.io/react/) and [Flux](http://facebook.git
 ## Usage
 
 1. Run ```npm install```
-2. Run ```webpack-dev-server```
+2. Run ```npm start```
 3. Open http://localhost:8080
