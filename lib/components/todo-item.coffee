@@ -1,6 +1,6 @@
 {li} = require 'reactionary'
-{addons} = require 'react/addons'
 TodoActions = require '../actions/todo'
+classNames = require 'classnames'
 
 
 module.exports =
@@ -11,7 +11,7 @@ React.createClass
     TodoActions.select(@props.todo)
 
   render: ->
-    classes = addons.classSet
+    classes = classNames
       'todo-item': true
       'selected': @props.isSelected
 

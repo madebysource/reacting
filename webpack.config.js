@@ -7,23 +7,27 @@ module.exports = {
         'webpack/hot/dev-server',
         './index.js'
     ],
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     debug: true,
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
-        loaders: [{
-            test: /\.coffee$/,
-            loader: 'coffee'
-        }, {
-            test: /\.less$/,
-            loaders: ['style', 'css', 'less']
-        }, {
-            test: /\.(png|jpg)$/,
-            loader: 'url-loader?limit=8192'
-        }],
+        loaders: [
+            {
+                test: /\.coffee$/,
+                loader: 'coffee'
+            },
+            {
+                test: /\.less$/,
+                loaders: ['style', 'css', 'less']
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader?limit=8192'
+            }
+        ],
         noParse: /\.min\.js/
     },
     resolve: {
