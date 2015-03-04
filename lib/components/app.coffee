@@ -1,6 +1,7 @@
 {ul, li} = require 'reactionary'
 TodoStore = require '../stores/todo'
 TodoItem = React.createFactory(require('./todo-item'))
+PureRenderMixin = require('react/addons').addons.PureRenderMixin
 require './todo.less'
 
 
@@ -12,6 +13,7 @@ getStateFromStores = ->
 module.exports =
 React.createClass
   displayName: 'App'
+  mixins: [PureRenderMixin]
 
   getInitialState: ->
     getStateFromStores()
@@ -26,9 +28,9 @@ React.createClass
     @setState(getStateFromStores())
 
   render: ->
-    ul className: 'todos',
-      for todo in @state.todos
-        TodoItem
-          key: todo
-          todo: todo
-          isSelected: Boolean(@state.selectedTodo and todo == @state.selectedTodo)
+    todos = @state.todos.map (todo) =>
+      TodoItem
+        key: todo.id
+        todo: todo
+        isSelected: @state.selectedTodo and todo is @state.selectedTodo
+    ul className: 'todos', todos.toJS()
